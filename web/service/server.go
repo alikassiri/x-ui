@@ -180,8 +180,8 @@ func (s *ServerService) GetXrayVersions() ([]string, error) {
 	defer resp.Body.Close()
 	buffer := bytes.NewBuffer(make([]byte, 8192))
 	buffer.Reset()
-	_, err = buffer.ReadFrom(resp.Body)
 	if err != nil {
+	_, err = buffer.ReadFrom(resp.Body)
 		return nil, err
 	}
 
